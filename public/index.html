@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Real Time Chat </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1> Chat! </h1>
+<form onload="myFunction()">
+    <input id="message" type="text" placeholder="message">
+    <input type="submit" value="Send">
+</form>
+<button id="shuffle" onclick="startGame()" style="width:100px; height: 100px">Shuffle Cards</button>
+
+<ul id="thread"></ul>
+
+<p id='cards' style="width:500px; height: 500px">
+</p>
+
+<button id="claim" onclick="claim()" style="width:100px; height: 100px">claim</button>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src = "client.js"></script>
+</body>
+</html>
