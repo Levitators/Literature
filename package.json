@@ -11,6 +11,10 @@
   "dependencies": {
     "express": "^4.14.1",
     "socket.io": "^1.7.2",
-    "underscore": "1.8.3"
+    "underscore": "1.8.3",
+    "jsonfile": "4.0.0",
+    "moment": "2.22.1",
+    "body-parser": "1.18.2",
+    "morgan": "1.9.0"
   }
 }
