@@ -1,6 +1,7 @@
 // initializing socket, connection to server
-var socket = io.connect('http://localhost:7777');
+var socket = io.connect('http://localhost:8082');
 var person;
+var roomNumber;
 socket.on('connect', function(data) {
   socket.emit('join',{name : person, type: 'client'});
 });
@@ -28,10 +29,16 @@ socket.on('msgs', function (data) {
 })
 
 
+socket.on('roomNumber', function (data) {
+  console.log('your room number is', data);
+  roomNumber = data;
+})
+
+
 // prevents form from submitting and sends a message to server
 $('form').submit(function(){
   var message = $('#message').val();
-  socket.emit('messages', {personName : person, message: message});
+  socket.emit('messages', {personName : person, message: message}, roomNumber);
   this.reset();
   return false;
 });
@@ -57,7 +64,7 @@ function getTurn(data){
 
 function claim () {
   let cardCode = prompt("Please enter your cardcode", "");
-  socket.emit('claim', {from: 1 , to : 2 ,cardCode :  cardCode})
+  socket.emit('claim', {from: 1 , to : 2 ,cardCode :  cardCode}, roomNumber)
   console.log()
 //'claiming 2 hearts'
 }
@@ -65,5 +72,5 @@ function claim () {
 
 
 function startGame (){
-  socket.emit('startGame', person);
+  socket.emit('startGame', person, roomNumber);
 }
