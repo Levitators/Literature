@@ -2,6 +2,7 @@
 
 const _ = require('underscore');
 const dbDetails =  require('./' + (process.env.NODE_ENV || "test") + ".json");
+const fb = require('firebase');
 
 const requiredParams = [
   'LITERATURE_LOG_PATH',
@@ -38,5 +39,7 @@ module.exports = {
 
   mode: process.env.LITERATURE_MODE,
 
-  db : dbDetails
+  db : dbDetails,
+
+  firebase : fb.initializeApp(dbDetails)
 }
