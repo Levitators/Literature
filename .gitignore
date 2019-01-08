@@ -4,3 +4,4 @@ node_modules/
 npm-debug.log
 nodemon.json
 package-lock.json
+dist/**/*
