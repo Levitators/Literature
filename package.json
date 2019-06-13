@@ -1,20 +1,16 @@
 {
-  "name": "Literature",
+  "name": "rabbitmq",
   "version": "1.0.0",
-  "description": "A mind testing game",
-  "main": "server.js",
+  "description": "rabbitmq",
+  "main": "player_reciever_q.js",
+  "dependencies": {
+    "amqplib": "^0.5.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.14.1",
-    "socket.io": "^1.7.2",
-    "underscore": "1.8.3",
-    "jsonfile": "4.0.0",
-    "moment": "2.22.1",
-    "body-parser": "1.18.2",
-    "morgan": "1.9.0"
-  }
+  "author": "Pavu",
+  "license": "ISC"
 }
