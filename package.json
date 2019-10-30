@@ -15,6 +15,6 @@
     "jsonfile": "4.0.0",
     "moment": "2.22.1",
     "body-parser": "1.18.2",
-    "morgan": "1.9.0"
+    "morgan": "1.9.1"
   }
 }
